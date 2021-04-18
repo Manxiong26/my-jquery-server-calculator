@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery Server Calc</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <script src="jQuery-3.6.0.min.js"></script>
+        <script src="client.js"></script>
+    </head>
+    <body>
+        <header><h1>jQuery Server Calc</h1></header>
+        <div>
+            <input id="input-one" type="number" placeholder="Number One">
+            <button id="addBtn" class="button">+</button>
+            <button id="subBtn" class="button">-</button>
+            <button id="multipyBtn" class="button">*</button>
+            <button id="divideBtn" class="button">/</button>
+            <input id="input-two" type="number" placeholder="Number Two">
+            <button id="equal" class="submit">=</button>
+            <button id="clear" class="button">C</button>
+        </div>
+        <section>
+            <h2>Result: <span id="results"></span></h2>
+            <h3>History</h3>
+            <ul id="history-list">
+                <!-- jQuery fill in -->
+            </ul>
+        </section>
+    </body>
+</html>
