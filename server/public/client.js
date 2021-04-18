@@ -20,11 +20,9 @@ function calcInput(){
     let input = {
     // set input to an empty object to receive postCalc cata
     firstNum: $(`#input-one`).val(),
-    //set input.firstNum to equal the value of input-one 
-    //which the input.fistNum with automatically add to the input object.
+    //firstNum to equal the value of input-one 
     secondNum: $(`#input-two`).val(),
-    //set input.secondNum to equal the value of input-two
-    //which the input.secondNum with automatically add to the input object.
+    //secondNum to equal the value of input-two
    // console.log('operation', operation);
     operator: operation
     };
