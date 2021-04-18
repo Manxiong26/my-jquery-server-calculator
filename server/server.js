@@ -10,14 +10,15 @@ let calcArray = [];
 app.get('/calculator', function (req, res){
     console.log('get calc... ');
     res.send(calcArray);
-})
+});
 
 app.post('/calculator', function (req, res){
     let calcData = req.body;
     calculation(calcData);
     res.sendStatus(201);
     
-})
+});
+
 function calculation(calcData) {
     if( calcData.operator === '+'){
         calcData.answer = Number(calcData.firstNum) + Number(calcData.secondNum)

@@ -29,20 +29,21 @@ function doMath(){
     operation = $(this).attr('val');
 }
 
-function postCalc(obj) {
+function postCalc(input) {
     $.ajax({
         method: 'POST',
         url: '/calculator',
-        data: obj
+        data: input
     })
     .then(function (response) {
         console.log('Response from server', response);  
+        getCalc();
     })
     .catch(function( error){
         console.log('Error', error);
         alert('Something bad HAPPENED. Try again later');
-        getCalc();
-    })
+        
+    });
 }
 
 function getCalc(){
@@ -53,16 +54,17 @@ function getCalc(){
     .then(function( response) {
         console.log('Got message', response);
         render(response);
-        
+
     })
     .catch(function (error){
         console.log('Error from server', error); 
-    })
+        alert('Something bad HAPPENED. Try again later');
+    });
 }
 
-function render(history){
+function render(calcArray){
     $(`#history-list`).empty();
-    for(equation of history){
+    for(equation of calcArray){
         $(`#results`).empty();
         $(`#results`).append(`${equation.answer}`);
         $(`#history-list`).append(`
