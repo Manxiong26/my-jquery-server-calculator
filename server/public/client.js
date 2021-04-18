@@ -6,6 +6,10 @@ let operation = '';
 
 function onReady(){
     console.log('hi jQ');
+    $(`#equal`).on('click', calcInput);
+    $('.button').on('click', doMath);
+    $(`#clear`).on('click', clear);
+    getCalc();
 }
 
 function calcInput(){
@@ -16,11 +20,13 @@ function calcInput(){
     input.operator = operation;
     console.log('operation is sent to server', input.operator);
     console.log('result to formulate calc', input);
-      
+    postCalc(input);
+    $(`#input-one`).val('');
+    $(`#input-two`).val('');
 }
 
 function doMath(){
-    operation = $(this).attr('value');
+    operation = $(this).attr('id');
 }
 
 function postCalc(obj) {
@@ -35,6 +41,7 @@ function postCalc(obj) {
     .catch(function( error){
         console.log('Error', error);
         alert('Something bad HAPPENED. Try again later');
+        getCalc();
     })
 }
 
@@ -59,12 +66,13 @@ function render(history){
         $(`#results`).empty();
         $(`#results`).append(`${equation.result}`);
         $(`#history-list`).append(`
-        <li>${equation.fristNum}${equation.operator}${equation.secondNum} = ${equation.result}`)
+        <li>${equation.fristNum}${equation.operator}${equation.secondNum} = ${equation.result}</li>
+        `)
     }
 }
 
 function clear(){
     $(`#input-one`).val('');
     $(`#input-two`).val('');
-    operation = '';
+    operation = "";
 }
