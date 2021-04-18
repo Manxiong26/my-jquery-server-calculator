@@ -17,16 +17,17 @@ function onReady(){
 }
 
 function calcInput(){
-    let input = {};
+    let input = {
     // set input to an empty object to receive postCalc cata
-    input.firstNum = $(`#input-one`).val(); 
+    firstNum: $(`#input-one`).val(),
     //set input.firstNum to equal the value of input-one 
     //which the input.fistNum with automatically add to the input object.
-    input.secondNum = $(`#input-two`).val();
+    secondNum: $(`#input-two`).val(),
     //set input.secondNum to equal the value of input-two
     //which the input.secondNum with automatically add to the input object.
-    console.log('operation', operation);
-    input.operator = operation;
+   // console.log('operation', operation);
+    operator: operation
+    };
     //set input.operator to equal the operation variable to I set as an empty string
     console.log('operation is sent to server', input.operator);
     console.log('result to formulate calc', input);
