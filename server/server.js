@@ -19,21 +19,18 @@ app.post('/calculator', function (req, res){
     
 })
 function calculation(calcData) {
-    if( calcData.operator === 'addBtn'){
+    if( calcData.operator === '+'){
         calcData.answer = Number(calcData.firstNum) + Number(calcData.secondNum)
-    } else if (calcData.operator === 'subBtn'){
+    } else if (calcData.operator === '-'){
         calcData.answer = Number(calcData.firstNum) - Number(calcData.secondNum)
-    }else if (calcData.operator === 'multipyBtn'){
+    }else if (calcData.operator === '*'){
         calcData.answer = Number(calcData.firstNum) * Number(calcData.secondNum)
-    } else if (calcData.operator === 'divideBtn'){
+    } else if (calcData.operator === '/'){
         calcData.answer = Number(calcData.firstNum) / Number(calcData.secondNum)
     }
     calcData.equation = (`${calcData.firstNum} ${calcData.operator} ${calcData.secondNum} = ${calcData.answer}`)
     calcArray.push(calcData)
 }
-
-
-
 
 
 const PORT = 5000;

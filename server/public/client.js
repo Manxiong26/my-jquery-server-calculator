@@ -14,7 +14,7 @@ function onReady(){
 
 function calcInput(){
     let input = {};
-    input.fristNum = $(`#input-one`).val();
+    input.firstNum = $(`#input-one`).val();
     input.secondNum = $(`#input-two`).val();
     console.log('operation', operation);
     input.operator = operation;
@@ -26,7 +26,7 @@ function calcInput(){
 }
 
 function doMath(){
-    operation = $(this).attr('id');
+    operation = $(this).attr('val');
 }
 
 function postCalc(obj) {
@@ -64,9 +64,9 @@ function render(history){
     $(`#history-list`).empty();
     for(equation of history){
         $(`#results`).empty();
-        $(`#results`).append(`${equation.result}`);
+        $(`#results`).append(`${equation.answer}`);
         $(`#history-list`).append(`
-        <li>${equation.fristNum}${equation.operator}${equation.secondNum} = ${equation.result}</li>
+        <li>${equation.firstNum}${equation.operator}${equation.secondNum} = ${equation.answer}</li>
         `)
     }
 }
