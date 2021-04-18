@@ -53,3 +53,18 @@ function getCalc(){
     })
 }
 
+function render(history){
+    $(`#history-list`).empty();
+    for(equation of history){
+        $(`#results`).empty();
+        $(`#results`).append(`${equation.result}`);
+        $(`#history-list`).append(`
+        <li>${equation.fristNum}${equation.operator}${equation.secondNum} = ${equation.result}`)
+    }
+}
+
+function clear(){
+    $(`#input-one`).val('');
+    $(`#input-two`).val('');
+    operation = '';
+}
