@@ -1,10 +1,50 @@
-body{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIyMMfUMJaAmBMt9jv76ynJxD6GFjSzpl0uoJqEmgYfdrXQvz-6eOX-rw8H6qLZEJ3K7Y&usqp=CAU);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: midnightblue;
-    color: rgb(86, 156, 248);
+body {
+    background-color: rgba(210, 210, 215, 0.961);
+    margin: auto;
+    max-width: max-content;
+    font-family: 'Lora', serif;
+    font-style: italic;
+
 }
-ul{
-    font-size: x-large;
+
+header {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+
+}
+
+div {
+    background-color: rgb(8, 92, 165);
+    padding: 1rem;
+    margin-top: 5rem;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.563);
+}
+
+button.Complete {
+    background-color: rgb(53, 62, 187);
+    align-self: center;
+
+}
+
+.td-Incomplete {
+    text-decoration-line: line-through;
+}
+
+
+button {
+    border-radius: 0.5rem;
+    margin: auto 0;
+    background-color: cornflowerblue;
+}
+
+#btn-submit {
+    border-radius: 1rem;
+    width: max-content;
+    margin: auto 1rem;
+    background-color: lightblue;
+}
+
+p {
+    text-align: center;
 }
